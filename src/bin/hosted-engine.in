@@ -264,6 +264,9 @@ return ;}
         storageType=7
     elif [ "${domainType}" == "iscsi" ] ; then
         storageType=3
+    elif [ "${domainType}" == "" ] ; then
+        echo "No storage type defined. Did you finish the hosted-engine setup?"
+        exit 1
     else
         echo "Storage type not supported: ${domainType}"
         exit 1
